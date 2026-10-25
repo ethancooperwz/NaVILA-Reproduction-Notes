@@ -1,4 +1,4 @@
-# StreamVLN 中文复现笔记
+# StreamVLN 复现笔记
 
 本仓库整理 [StreamVLN](https://github.com/InternRobotics/StreamVLN) 的中文复现流程，重点覆盖公开 checkpoint 在 R2R-CE `val_unseen` 上的环境搭建、数据准备、推理评测与结果分析。
 
