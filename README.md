@@ -1,35 +1,25 @@
-# StreamVLN 复现笔记
+# NaVILA 复现笔记
 
-本仓库整理 [StreamVLN](https://github.com/InternRobotics/StreamVLN) 的中文复现流程，重点覆盖公开 checkpoint 在 R2R-CE `val_unseen` 上的环境搭建、数据准备、推理评测与结果分析。
+本仓库记录 [NaVILA](https://github.com/AnjieCheng/NaVILA) 的中文复现进度，沿用 StreamVLN 复现笔记的六篇文档结构。
 
-> 文档基于 StreamVLN 官方当前代码和 R2R_VLNCE v1-3 checkpoint。MP3D/HM3D 数据需要按各自许可从官方渠道申请，本仓库不包含模型权重和数据集。
+> 🚧 进行中：截至 2026-10-28，正在整理环境配置，尚未完成推理评测。部分文档仍为 StreamVLN 模板，已在文首标记，不代表 NaVILA 的配置或结果。
 
 ## 文档目录
 
-1. [论文介绍](docs/01%20-%20论文介绍.md)：任务、方法、动作空间和指标
-2. [环境配置](docs/02%20-%20环境配置.md)：Conda、Habitat、依赖和 checkpoint
-3. [数据集准备](docs/03%20-%20数据集准备.md)：MP3D、VLN-CE episodes 与训练数据
-4. [模型推理与测评](docs/04%20-%20模型推理与测评.md)：单卡/多卡命令、日志、结果和视频
-5. [常见报错与解决](docs/05%20-%20常见报错与解决.md)：依赖、显存、数据路径和分布式问题
-6. [实验结果与分析](docs/06%20-%20实验结果与分析.md)：官方基准、消融与本地记录模板
+1. [论文介绍](docs/01%20-%20论文介绍.md)：待改写为 NaVILA
+2. [环境配置](docs/02%20-%20环境配置.md)：正在整理 Conda 与 Habitat-Sim 源码准备步骤
+3. [数据集准备](docs/03%20-%20数据集准备.md)：待改写为 NaVILA
+4. [模型推理与测评](docs/04%20-%20模型推理与测评.md)：待改写，尚未运行评测
+5. [常见报错与解决](docs/05%20-%20常见报错与解决.md)：待整理 NaVILA 的实际问题
+6. [实验结果与分析](docs/06%20-%20实验结果与分析.md)：尚无本地评测结果
 
-## 最短复现路线
+## 当前进度与下次继续
 
-```text
-Python 3.9 + Habitat 0.2.4
-        ↓
-安装 StreamVLN requirements 与 FlashAttention
-        ↓
-下载 v1-3 checkpoint
-        ↓
-准备 MP3D 场景和 R2R_VLNCE v1-3 episodes
-        ↓
-运行 streamvln/streamvln_eval.py
-        ↓
-核对 NE / OS / SR / SPL
-```
-
-官方 R2R-CE `val_unseen` 参考结果为：**NE 4.90、OS 63.6、SR 56.4、SPL 50.2**。完整复现前请先阅读每篇文档中的版本和目录说明。
+- 本地已克隆 NaVILA 源码，版本为 `76b98f233dd0fff05dfcd69435eec6740febff9d`。
+- 已记录 Python 3.10、PyTorch 2.3.0、CUDA 12.1 的环境准备草稿；安装是否成功尚未核验。
+- 本地已有 `NaVILA/third_party/habitat-sim` 源码，当前版本标记为 `challenge-2021`，与草稿要求的 `v0.1.7` 尚需核对，子模块也有本地变更。
+- 下次先核对 Habitat-Sim 的实际版本及编译状态，再继续 Habitat-Lab、NaVILA 依赖和环境自检。
+- 数据集、checkpoint、推理与指标待核验和记录；模板中的 StreamVLN 命令与指标不能直接用于 NaVILA。
 
 ## 仓库结构
 
@@ -46,9 +36,11 @@ Python 3.9 + Habitat 0.2.4
 └── images/                 # 截图和实验结果（可选）
 ```
 
+本仓库保存复现笔记；本地上游源码、编译产物、数据集和模型权重不纳入版本管理。
+
 ## 参考资料
 
-- [论文（arXiv 2507.05240）](https://arxiv.org/abs/2507.05240)
-- [官方代码](https://github.com/InternRobotics/StreamVLN)
-- [项目主页](https://streamvln.github.io/)
-- [StreamVLN trajectory data](https://huggingface.co/datasets/cywan/StreamVLN-Trajectory-Data)
+- [论文（arXiv 2412.04453）](https://arxiv.org/abs/2412.04453)
+- [官方代码](https://github.com/AnjieCheng/NaVILA)
+- [项目主页](https://navila-bot.github.io/)
+- [复现项目索引](https://github.com/ethancooperwz/Awesome-VLN-Reproductions)

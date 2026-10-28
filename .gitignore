@@ -1,0 +1,6 @@
+# Local upstream source checkout and generated artifacts
+/NaVILA/
+__pycache__/
+*.pyc
+.env
+.env.*
