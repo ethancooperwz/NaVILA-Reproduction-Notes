@@ -1,8 +1,8 @@
 # NaVILA 复现笔记
 
-本仓库整理 [NaVILA](https://github.com/AnjieCheng/NaVILA) 的中文复现流程，覆盖环境配置、数据准备、公开权重推理评测和结果分析。
+本仓库整理 [NaVILA](https://github.com/AnjieCheng/NaVILA) 的复现流程，覆盖环境配置、数据准备、公开权重推理评测和结果分析。
 
-> 已于 2026-10-31 完成官方 NaVILA-8B-8F 权重在 R2R-CE `val_unseen` 全部 1839 条任务上的评测。本次属于公开权重的高层导航评测复现，不包含重新训练、底层运动策略、Isaac 完整系统或真机部署。
+> 完成官方 NaVILA-8B-8F 权重在 R2R-CE `val_unseen` 全部 1839 条任务上的评测。本次属于公开权重的高层导航评测复现，不包含重新训练、底层运动策略、Isaac 完整系统或真机部署。
 
 ## 文档目录
 
